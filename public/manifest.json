@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "tick tack toe (p2p)",
+  "name": "tick tack toe (peer to peer)",
   "icons": [
     {
       "src": "favicon.ico",
