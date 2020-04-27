@@ -3,7 +3,7 @@ import dispatcher from '../appDispatcher';
 export function recieveBlab(blab) {
     dispatcher.dispatch({
         actionType: "BLAB_REC",
-        blab
+        blab: {blab, by:"notme"}
     });
 }
 

@@ -70,9 +70,9 @@ export default function Room() {
     }
   }
 
-  function sendBlab(blob) {
-    otherPeerConnection.send(blob);
-    chatActions.sendBlab(blob);
+  function sendBlab(blab) {
+    otherPeerConnection.send(blab);
+    chatActions.sendBlab({blab, by:"me"});
   }
 
   return (
