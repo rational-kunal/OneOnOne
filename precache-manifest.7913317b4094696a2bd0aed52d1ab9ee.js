@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0b95d13cf4c584c7eb3d4a39fbdfb8ae",
+    "revision": "157b391adf50310ad483eeda1778219c",
     "url": "/OneOnOne/index.html"
   },
   {
-    "revision": "347cc508d64dd5f481db",
+    "revision": "2f21b2bc9b856b288bb1",
     "url": "/OneOnOne/static/css/main.c0c92423.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OneOnOne/static/js/2.fd6c108c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "347cc508d64dd5f481db",
-    "url": "/OneOnOne/static/js/main.28d3cd8a.chunk.js"
+    "revision": "2f21b2bc9b856b288bb1",
+    "url": "/OneOnOne/static/js/main.27b0a293.chunk.js"
   },
   {
     "revision": "a50bdc07b05837343c60",
