@@ -11,7 +11,8 @@ export const ChatContext = React.createContext();
 export default function Room() {
   const { otherPeerId } = useParams();
 
-  const [peer] = useState(new Peer());
+  // todo host peer server
+  const [peer] = useState(new Peer({host:'peerjs-server.herokuapp.com', secure:true, port:443}));
   const [peerId, setPeerId] = useState(null);
   const [otherPeerConnection, setOtherPeerConnection] = useState(null);
   const [localStream, setLocalStream] = useState(null);

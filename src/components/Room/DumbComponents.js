@@ -18,11 +18,10 @@ export function RoomView({
       <Grid item xs={12} md={5}>
         <Video stream={localStream} />
         <Video stream={otherPeerStream} />
-
-        {shoulDisplayChat && <Chat />}
       </Grid>
       <Grid item xs={12} md={7}>
         {joinData.shouldShow && <JoinTo peerId={joinData.peerId} />}
+        {shoulDisplayChat && <Chat />}
       </Grid>
     </Grid>
   );
