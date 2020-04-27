@@ -45,7 +45,7 @@ export default function Room() {
 
   useEffect(() => {
     navigator.mediaDevices
-      .getUserMedia({ audio: false, video: true })
+      .getUserMedia({ audio: true, video: true })
       .then((stream) => {
         setLocalStream(stream);
       })
