@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/OneOnOne/static/css/main.c0c92423.chunk.css",
+    "main.js": "/OneOnOne/static/js/main.28d3cd8a.chunk.js",
+    "main.js.map": "/OneOnOne/static/js/main.28d3cd8a.chunk.js.map",
+    "runtime-main.js": "/OneOnOne/static/js/runtime-main.034b757f.js",
+    "runtime-main.js.map": "/OneOnOne/static/js/runtime-main.034b757f.js.map",
+    "static/js/2.fd6c108c.chunk.js": "/OneOnOne/static/js/2.fd6c108c.chunk.js",
+    "static/js/2.fd6c108c.chunk.js.map": "/OneOnOne/static/js/2.fd6c108c.chunk.js.map",
+    "index.html": "/OneOnOne/index.html",
+    "precache-manifest.8f1e843e94d2ca9fa1ce44105041866b.js": "/OneOnOne/precache-manifest.8f1e843e94d2ca9fa1ce44105041866b.js",
+    "service-worker.js": "/OneOnOne/service-worker.js",
+    "static/css/main.c0c92423.chunk.css.map": "/OneOnOne/static/css/main.c0c92423.chunk.css.map",
+    "static/js/2.fd6c108c.chunk.js.LICENSE.txt": "/OneOnOne/static/js/2.fd6c108c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.034b757f.js",
+    "static/js/2.fd6c108c.chunk.js",
+    "static/css/main.c0c92423.chunk.css",
+    "static/js/main.28d3cd8a.chunk.js"
+  ]
+}
