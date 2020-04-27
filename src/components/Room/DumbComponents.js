@@ -31,7 +31,7 @@ function JoinTo({ peerId }) {
   return (
     <Paper style={{ marginBottom: 12 }}>
       <Typography variant="h6" style={{ padding: 12 }}>
-        {peerId ? 'share https://rational-kunal.github.io/OneOnOne/join/' + peerId : <CircularProgress />}
+        {peerId ? 'peer id https://rational-kunal.github.io/OneOnOne/join/' + peerId : <CircularProgress />}
       </Typography>
     </Paper>
   );
