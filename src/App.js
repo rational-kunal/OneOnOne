@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Room from './components/Room';
 
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
+
 function App() {
   return (
     <Router>
@@ -21,4 +25,19 @@ function App() {
   );
 }
 
-export default App;
+function AppContainer() {
+  const theme = createMuiTheme({
+    palette: { type: 'dark' },
+  });
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container style={{marginTop: 24, marginBottom: 24}} maxWidth="md">
+        <App />
+      </Container>
+    </ThemeProvider>
+  );
+}
+
+export default AppContainer;

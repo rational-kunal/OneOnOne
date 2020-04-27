@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Peer from 'peerjs';
 
-import Chat from './Chat';
-import Video from './Video';
-import * as chatActions from '../actions/chatActions';
+import * as chatActions from '../../actions/chatActions';
+
+import { RoomView } from './DumbComponents';
+
+export const ChatContext = React.createContext();
 
 export default function Room() {
   const { otherPeerId } = useParams();
@@ -24,34 +26,37 @@ export default function Room() {
         setOtherPeerConnection(connection);
       } else {
         setPeerId(id);
+        peer.on('connection', function (connection) {
+          console.info('connection arrived from', connection);
+          setOtherPeerConnection(connection);
+        });
       }
     });
 
-    peer.on('connection', function (connection) {
-      console.info('connection arrived from', connection);
-      setOtherPeerConnection(connection);
-
-      connection.on('open', () => {
-        console.info('connection opened');
-        connection.on('data', (data) => {
-          chatActions.recieveBlab(data);
-        });
-      });
-    });
-
     peer.on('call', (call) => {
-      console.log('calllll');
+      console.info('call arrived', call);
       setCall(call);
     });
+  }, []);
 
-    // navigator.getUserMedia = navigator.mediaDevices.getUserMedia || navigator.getUserMedia;
+  useEffect(() => {
     navigator.mediaDevices
       .getUserMedia({ audio: false, video: true })
       .then((stream) => {
         setLocalStream(stream);
       })
       .catch((error) => console.error(error));
-  }, [otherPeerId, peer]);
+  }, []);
+
+  useEffect(() => {
+    otherPeerConnection &&
+      otherPeerConnection.on('open', () => {
+        console.info('connection opened');
+        otherPeerConnection.on('data', (data) => {
+          chatActions.recieveBlab(data);
+        });
+      });
+  }, [otherPeerConnection]);
 
   // todo: remove this block
   if (call) {
@@ -69,14 +74,12 @@ export default function Room() {
   }
 
   return (
-    <div>
-      <h1>{peerId && 'join at ' + peerId}</h1>
-      <div>
-        {otherPeerConnection && <Chat sendFn={(blab) => sendBlab(blab)} />}
-      </div>
-
-      <Video stream={localStream} />
-      <Video stream={otherPeerStream} />
-    </div>
+    <ChatContext.Provider value={sendBlab}>
+      <RoomView
+        localStream={localStream}
+        otherPeerStream={otherPeerStream}
+        shoulDisplayChat={otherPeerStream !== null}
+      />
+    </ChatContext.Provider>
   );
 }
