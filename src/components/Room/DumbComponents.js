@@ -30,8 +30,8 @@ export function RoomView({
 function JoinTo({ peerId }) {
   return (
     <Paper style={{ marginBottom: 12 }}>
-      <Typography variant="h6" style={{padding: 12}}>
-        {((peerId) ? "share link/"+peerId : <CircularProgress />)}
+      <Typography variant="h6" style={{ padding: 12 }}>
+        {peerId ? 'share link/' + peerId : <CircularProgress />}
       </Typography>
     </Paper>
   );

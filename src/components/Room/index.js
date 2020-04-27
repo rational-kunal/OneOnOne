@@ -12,7 +12,9 @@ export default function Room() {
   const { otherPeerId } = useParams();
 
   // todo host peer server
-  const [peer] = useState(new Peer({host:'peerjs-server.herokuapp.com', secure:true, port:443}));
+  const [peer] = useState(
+    new Peer({ host: 'peerjs-server.herokuapp.com', secure: true, port: 443 })
+  );
   const [peerId, setPeerId] = useState(null);
   const [otherPeerConnection, setOtherPeerConnection] = useState(null);
   const [localStream, setLocalStream] = useState(null);
@@ -73,7 +75,7 @@ export default function Room() {
 
   function sendBlab(blab) {
     otherPeerConnection.send(blab);
-    chatActions.sendBlab({blab, by:"me"});
+    chatActions.sendBlab(blab);
   }
 
   return (

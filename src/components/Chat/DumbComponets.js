@@ -36,7 +36,7 @@ export function BlabView({ blab }) {
     <>
       <ListItem button>
         <ListItemIcon>
-          {(blab.by === "me") ? <BlabSendIcon /> : <BlabRecievedIcon />}
+          {blab.by === 'me' ? <BlabSendIcon /> : <BlabRecievedIcon />}
         </ListItemIcon>
         <ListItemText primary={blab.blab} />
       </ListItem>

@@ -1,12 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react';
 import chatStore from '../../stores/chatStore';
-import {ChatContext} from '../Room';
+import { ChatContext } from '../Room';
 
 import Paper from '@material-ui/core/Paper';
 
-import {
-  BlabView, SendBlabView
-} from './DumbComponets';
+import { BlabView, SendBlabView } from './DumbComponets';
 
 export default function Chat() {
   const [blabHistory, setBlabHistory] = useState([]);

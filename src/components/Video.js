@@ -9,7 +9,7 @@ export default function Video({ stream }) {
   }
 
   return (
-    <Card style={{marginBottom: 12}} variant="outlined" raised={true}>
+    <Card style={{ marginBottom: 12 }} variant="outlined" raised={true}>
       <video width="100%" height="100%" ref={videoRef} autoPlay></video>
     </Card>
   );

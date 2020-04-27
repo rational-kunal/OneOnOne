@@ -1,6 +1,6 @@
 {
-  "short_name": "tick tack toe (p2p)",
-  "name": "tick tack toe (peer to peer)",
+  "short_name": "One on One (p2p)",
+  "name": "One on One (peer to peer)",
   "icons": [
     {
       "src": "favicon.ico",

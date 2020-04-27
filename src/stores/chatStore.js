@@ -1,5 +1,6 @@
 import { EventEmitter } from 'events';
 import dispatcher from '../appDispatcher';
+import actionTypes from '../actions/types';
 
 const CHANGE_EVENT = 'change';
 let _blabHistory = [];
@@ -26,11 +27,11 @@ const chatStore = new ChatStore();
 
 dispatcher.register((action) => {
   switch (action.actionType) {
-    case 'BLAB_REC':
+    case actionTypes.BLAB_RECEVIE:
       _blabHistory.push(action.blab);
       chatStore.emitChange();
       break;
-    case 'BLAB_SEND':
+    case actionTypes.BLAB_SEND:
       _blabHistory.push(action.blab);
       chatStore.emitChange();
       break;
