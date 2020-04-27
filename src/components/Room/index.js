@@ -23,6 +23,7 @@ export default function Room() {
       console.info('connection id', id);
       if (otherPeerId) {
         const connection = peer.connect(otherPeerId);
+        console.info('send connection to', otherPeerId);
         setOtherPeerConnection(connection);
       } else {
         setPeerId(id);
@@ -64,6 +65,7 @@ export default function Room() {
     call.on('stream', (stream) => setOtherPeerStream(stream));
   } else {
     if (localStream && otherPeerConnection) {
+      console.info('calling to', otherPeerId);
       setCall(peer.call(otherPeerId, localStream));
     }
   }
@@ -79,6 +81,10 @@ export default function Room() {
         localStream={localStream}
         otherPeerStream={otherPeerStream}
         shoulDisplayChat={otherPeerStream !== null}
+        joinData={{
+          peerId,
+          shouldShow: otherPeerId === undefined && !otherPeerConnection,
+        }}
       />
     </ChatContext.Provider>
   );
